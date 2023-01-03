@@ -1,0 +1,73 @@
+{
+  "name": "flutter-project-template",
+  "displayName": "Flutter Project Template",
+  "description": "Template and snippets for a medium size applications",
+  "version": "0.1.0",
+  "author": "Gerardo Miranda",
+  "publisher": "GerardoMiranda",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gerardo-m/flutter-project-template"
+  },
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Snippets",
+    "Programming Languages"
+  ],
+  "keywords": [
+    "dart",
+    "flutter",
+    "angulardart",
+    "bloc",
+    "state-management"
+  ],
+  "activationEvents": [
+    "onCommand:flutter-project-template.setup"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "flutter-project-template.setup",
+        "title": "FP: Setup"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "flutter-project-template.setup",
+          "when": "editorLangId == dart"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.0.0",
+    "@types/mkdirp": "^0.5.2",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.74.0",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "@vscode/test-electron": "^2.2.0",
+    "change-case": "^4.1.2",
+    "eslint": "^8.28.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.1.0",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "mkdirp": "^0.5.1",
+    "change-case": "^4.1.2"
+  }
+}
