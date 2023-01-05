@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getPubspecFileContent = exports.getMainFileContent = exports.getDiFileContent = exports.getThemeFileContent = exports.getRouteHandlingFileContent = exports.getRoutesFileContent = exports.getHomeScreenContent = void 0;
+exports.getPubspecFileContent = exports.getMainFileContent = exports.getDiFileContent = exports.getThemeFileContent = exports.getRouteHandlingFileContent = exports.getRoutesFileContent = exports.getViewsBarrelFileContent = exports.getHomeScreenContent = void 0;
 const changeCase = require("change-case");
 function getHomeScreenContent(projectName) {
     const pascalProjectName = changeCase.pascalCase(projectName);
@@ -24,6 +24,10 @@ class HomeScreen extends StatelessWidget{
   `;
 }
 exports.getHomeScreenContent = getHomeScreenContent;
+function getViewsBarrelFileContent() {
+    return `export 'home/home_screen.dart';`;
+}
+exports.getViewsBarrelFileContent = getViewsBarrelFileContent;
 function getRoutesFileContent(projectName) {
     const pascalProjectName = changeCase.pascalCase(projectName);
     return `class ${pascalProjectName}Routes{
@@ -36,7 +40,7 @@ exports.getRoutesFileContent = getRoutesFileContent;
 function getRouteHandlingFileContent(projectName) {
     const pascalProjectName = changeCase.pascalCase(projectName);
     return `import 'package:${projectName}/utils/routes.dart';
-import 'package:${projectName}/views/home/home_screen.dart';
+import 'package:${projectName}/views/views.dart';
 import 'package:flutter/material.dart';
 
 class ${pascalProjectName}RouteHandling{

@@ -22,6 +22,10 @@ class HomeScreen extends StatelessWidget{
   `;
 }
 
+export function getViewsBarrelFileContent(): string{
+  return `export 'home/home_screen.dart';`;
+}
+
 export function getRoutesFileContent(projectName: string): string{
   const pascalProjectName = changeCase.pascalCase(projectName);
   return `class ${pascalProjectName}Routes{
@@ -34,7 +38,7 @@ export function getRoutesFileContent(projectName: string): string{
 export function getRouteHandlingFileContent(projectName: string): string{
   const pascalProjectName = changeCase.pascalCase(projectName);
   return `import 'package:${projectName}/utils/routes.dart';
-import 'package:${projectName}/views/home/home_screen.dart';
+import 'package:${projectName}/views/views.dart';
 import 'package:flutter/material.dart';
 
 class ${pascalProjectName}RouteHandling{

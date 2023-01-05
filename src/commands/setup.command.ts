@@ -9,6 +9,7 @@ import {
   workspace,
   // env,
 } from "vscode";
+import { create } from "domain";
 
 export const setup = async () => {
   if (workspace.workspaceFolders === undefined){
@@ -16,6 +17,7 @@ export const setup = async () => {
   }
   const projectName = workspace.workspaceFolders[0].name;
   await createHomeScreen(projectName);
+  await createViewsBarrelFile();
 
   await createUtilsDirectory();
   await createRoutesFile(projectName);
@@ -36,6 +38,11 @@ async function createHomeScreen(projectName: string) : Promise<void>{
 
   const homePagePath = `${homeScreenDirectory}/home_screen.dart`;
   return fileUtils.createFile(homePagePath, template.getHomeScreenContent(projectName));
+}
+
+async function createViewsBarrelFile(): Promise<void>{
+  const viewsBarrelFilePath = `${workspace.workspaceFolders![0].uri.fsPath}/lib/views/views.dart`;
+  return fileUtils.createFile(viewsBarrelFilePath, template.getViewsBarrelFileContent());
 }
 
 async function createUtilsDirectory(): Promise<void> {

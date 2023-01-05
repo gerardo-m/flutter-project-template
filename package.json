@@ -2,7 +2,7 @@
   "name": "flutter-project-template",
   "displayName": "Flutter Project Template",
   "description": "Template and snippets for a medium size applications",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Gerardo Miranda",
   "publisher": "GerardoMiranda",
   "repository": {
@@ -19,12 +19,12 @@
   "keywords": [
     "dart",
     "flutter",
-    "angulardart",
     "bloc",
     "state-management"
   ],
   "activationEvents": [
-    "onCommand:flutter-project-template.setup"
+    "onCommand:flutter-project-template.setup",
+    "onCommand:flutter-project-template.new-screen"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -32,6 +32,10 @@
       {
         "command": "flutter-project-template.setup",
         "title": "FP: Setup"
+      },
+      {
+        "command": "flutter-project-template.new-screen",
+        "title": "FP: New Screen"
       }
     ],
     "menus": {
@@ -39,9 +43,19 @@
         {
           "command": "flutter-project-template.setup",
           "when": "editorLangId == dart"
+        },
+        {
+          "command": "flutter-project-template.setup",
+          "when": "editorLangId == dart"
         }
       ]
-    }
+    },
+    "snippets": [
+      {
+        "language": "dart",
+        "path": "./src/snippets/routes.json"
+      }
+    ]
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
@@ -54,13 +68,13 @@
   "devDependencies": {
     "@types/glob": "^8.0.0",
     "@types/mkdirp": "^0.5.2",
+    "@types/change-case": "^4.1.2",
     "@types/mocha": "^10.0.1",
     "@types/node": "16.x",
     "@types/vscode": "^1.74.0",
     "@typescript-eslint/eslint-plugin": "^5.45.0",
     "@typescript-eslint/parser": "^5.45.0",
     "@vscode/test-electron": "^2.2.0",
-    "change-case": "^4.1.2",
     "eslint": "^8.28.0",
     "glob": "^8.0.3",
     "mocha": "^10.1.0",

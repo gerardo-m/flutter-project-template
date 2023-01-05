@@ -1,0 +1,14 @@
+{
+    "SimpleRoute": {
+        "prefix": "fpsimpleroute",
+        "body": [
+            "static Route<dynamic> _go${1:ScreenName}(RouteSettings settings){",
+            "\t return MaterialPageRoute(",
+            "\t\tbuilder: (context){",
+            "\t\t\treturn const $1Screen();",
+            "\t\t}",
+            "\t);",
+            "}"
+        ]
+    }
+}

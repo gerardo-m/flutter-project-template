@@ -11,6 +11,7 @@ const setup = async () => {
     }
     const projectName = vscode_1.workspace.workspaceFolders[0].name;
     await createHomeScreen(projectName);
+    await createViewsBarrelFile();
     await createUtilsDirectory();
     await createRoutesFile(projectName);
     await createRouteHandlingFile(projectName);
@@ -28,6 +29,10 @@ async function createHomeScreen(projectName) {
     }
     const homePagePath = `${homeScreenDirectory}/home_screen.dart`;
     return fileUtils.createFile(homePagePath, template.getHomeScreenContent(projectName));
+}
+async function createViewsBarrelFile() {
+    const viewsBarrelFilePath = `${vscode_1.workspace.workspaceFolders[0].uri.fsPath}/lib/views/views.dart`;
+    return fileUtils.createFile(viewsBarrelFilePath, template.getViewsBarrelFileContent());
 }
 async function createUtilsDirectory() {
     const utilsDirectory = `${vscode_1.workspace.workspaceFolders[0].uri.fsPath}/lib/utils`;
