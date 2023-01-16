@@ -2,7 +2,7 @@
   "name": "flutter-project-template",
   "displayName": "Flutter Project Template",
   "description": "Template and snippets for a medium size applications",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "Gerardo Miranda",
   "publisher": "GerardoMiranda",
   "repository": {
@@ -24,7 +24,10 @@
   ],
   "activationEvents": [
     "onCommand:flutter-project-template.setup",
-    "onCommand:flutter-project-template.new-screen"
+    "onCommand:flutter-project-template.new-screen",
+    "onCommand:flutter-project-template.new-repository",
+    "onCommand:flutter-project-template.new-firestore-repository",
+    "onCommand:flutter-project-template.new-service"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -36,6 +39,18 @@
       {
         "command": "flutter-project-template.new-screen",
         "title": "FP: New Screen"
+      },
+      {
+        "command": "flutter-project-template.new-repository",
+        "title": "FP: New Repository"
+      },
+      {
+        "command": "flutter-project-template.new-firestore-repository",
+        "title": "FP: New Firestore Repository"
+      },
+      {
+        "command": "flutter-project-template.new-service",
+        "title": "FP: New Service"
       }
     ],
     "menus": {
@@ -45,7 +60,19 @@
           "when": "editorLangId == dart"
         },
         {
-          "command": "flutter-project-template.setup",
+          "command": "flutter-project-template.new-screen",
+          "when": "editorLangId == dart"
+        },
+        {
+          "command": "flutter-project-template.new-repository",
+          "when": "editorLangId == dart"
+        },
+        {
+          "command": "flutter-project-template.new-firestore-repository",
+          "when": "editorLangId == dart"
+        },
+        {
+          "command": "flutter-project-template.new-service",
           "when": "editorLangId == dart"
         }
       ]
@@ -53,7 +80,7 @@
     "snippets": [
       {
         "language": "dart",
-        "path": "./src/snippets/routes.json"
+        "path": "./snippets/routes.json"
       }
     ]
   },
@@ -68,7 +95,6 @@
   "devDependencies": {
     "@types/glob": "^8.0.0",
     "@types/mkdirp": "^0.5.2",
-    "@types/change-case": "^4.1.2",
     "@types/mocha": "^10.0.1",
     "@types/node": "16.x",
     "@types/vscode": "^1.74.0",
@@ -82,6 +108,7 @@
   },
   "dependencies": {
     "mkdirp": "^0.5.1",
-    "change-case": "^4.1.2"
+    "change-case": "^4.1.2",
+    "pluralize": "8.0.0"
   }
 }

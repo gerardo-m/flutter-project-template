@@ -11,7 +11,7 @@ function activate(context) {
     // Use the console to output diagnostic information (console.log) and errors (console.error)
     // This line of code will only be executed once when your extension is activated
     console.log('Congratulations, your extension "flutter-project-template" is now active!');
-    context.subscriptions.push(vscode_1.commands.registerCommand('flutter-project-template.setup', commands_1.setup), vscode_1.commands.registerCommand('flutter-project-template.new-screen', commands_1.newScreen));
+    context.subscriptions.push(vscode_1.commands.registerCommand('flutter-project-template.setup', commands_1.setup), vscode_1.commands.registerCommand('flutter-project-template.new-screen', commands_1.newScreen), vscode_1.commands.registerCommand('flutter-project-template.new-repository', commands_1.newRepository), vscode_1.commands.registerCommand('flutter-project-template.new-firestore-repository', commands_1.newFirestoreRepository), vscode_1.commands.registerCommand('flutter-project-template.new-service', commands_1.newService));
 }
 exports.activate = activate;
 // This method is called when your extension is deactivated

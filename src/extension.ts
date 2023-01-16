@@ -1,7 +1,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import { commands, ExtensionContext, window, languages, workspace } from "vscode";
-import { setup, newScreen } from "./commands";
+import { setup, newScreen, newRepository, newFirestoreRepository, newService } from "./commands";
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
@@ -14,6 +14,9 @@ export function activate(context: ExtensionContext) {
 	context.subscriptions.push(
     commands.registerCommand('flutter-project-template.setup', setup),
     commands.registerCommand('flutter-project-template.new-screen', newScreen),
+    commands.registerCommand('flutter-project-template.new-repository', newRepository),
+    commands.registerCommand('flutter-project-template.new-firestore-repository', newFirestoreRepository),
+    commands.registerCommand('flutter-project-template.new-service', newService),
   );
 }
 

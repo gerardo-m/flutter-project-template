@@ -9,7 +9,6 @@ import {
   workspace,
   // env,
 } from "vscode";
-import { create } from "domain";
 
 export const setup = async () => {
   if (workspace.workspaceFolders === undefined){

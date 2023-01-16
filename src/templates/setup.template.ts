@@ -177,7 +177,10 @@ export function getMainFileContent(projectName: string): string{
 import 'package:${projectName}/utils/theme.dart';
 import 'package:${projectName}/utils/route_handling.dart';
 
-  void main() {
+import 'dependency_injection.dart' as di;
+
+  void main() async{
+    await di.setup();
     runApp(const MyApp());
   }
   

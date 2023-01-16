@@ -11,10 +11,13 @@ useful or just need a guide on how to approach Flutter projects.
 
 ## Commands
 
-| Command            | Description                         |
-| ------------------ | ----------------------------------- |
-| `FP: Setup`        | Initialize the application template |
-| `FP: New Screen`   | Creates an empty screen             |
+| Command                        | Description                          |
+| ------------------------------ | ------------------------------------ |
+| `FP: Setup`                    | Initialize the application template  |
+| `FP: New Screen`               | Creates an empty screen              |
+| `FP: New Service`              | Creates an empty service             |
+| `FP: New Repository`           | Creates an abstract repository       |
+| `FP: New Firestore Repository` | Creates a basic firestore repository |
 
 ### Warning!!!
 
@@ -31,6 +34,17 @@ Only call the `FP: Setup` command when starting a new project, since it will ove
 None for the moment.
 
 ## Release Notes
+
+### 0.3.0
+
+- Added Template for base repositories
+- Added Template for firestore repositories
+- Added Template for base services
+- Fixed missing import of the dependency_injection file in the Setup template
+
+### 0.2.1
+
+- Fixed fpsimpleroute snippet not found
 
 ### 0.2.0
 
